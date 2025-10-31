@@ -4,6 +4,34 @@
   box-sizing: border-box;
 }
 
+#root {
+  border: 1px solid #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+/* table */
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+[class^="row-"] {
+  display: flex;
+}
+
+[class^="cell-"] {
+  width: 120px;
+  border: 1px solid black;
+  border-radius: 2px;
+  text-align: center;
+  padding: 5px;
+}
+/* /table */
+
 .course-block {
   display: flex;
   flex-direction: column;

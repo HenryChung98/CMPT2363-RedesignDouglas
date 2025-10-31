@@ -1,5 +1,6 @@
-import { CourseBlock } from "./components/CourseBlock.js";
 import { data } from "./data.js";
+import { TimeTable } from "./components/TimeTable.js";
+import { CourseBlock } from "./components/CourseBlock.js";
 
 const root = document.getElementById("root");
 
@@ -11,11 +12,20 @@ const semesterTitle = document.createElement("h1");
 semesterTitle.textContent = fallSemester;
 root.appendChild(semesterTitle);
 
+// display timetable
+root.appendChild(TimeTable({ rowNum: 6, colNum: 8 }));
+
 // display course blocks
 data.schedule[fallSemester].courses.forEach((course) => {
   root.appendChild(
     CourseBlock({
-      details: [course.code, course.title, course.title, course.title, course.title],
+      details: [
+        course.code,
+        course.title,
+        course.title,
+        course.title,
+        course.title,
+      ],
       backColor: "#82caff",
       borderColor: "#0041c2",
     })
