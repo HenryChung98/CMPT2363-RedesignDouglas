@@ -11,7 +11,7 @@ export const TimeTable = ({ rowNum, colNum }) => {
     "Friday",
     "Saturday",
   ];
-  const times = ["09:00", "09:30", "10:00", "10:30", "11:00"];
+  const times = ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00"];
   const smallCell = "70px";
 
   for (let i = 0; i < rowNum; i++) {
