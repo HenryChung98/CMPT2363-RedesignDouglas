@@ -1,26 +1,9 @@
 import { TimeTable } from "../components/TimeTable.js";
-import { CourseBlock } from "../components/CourseBlock.js";
 
-export const TimeTableSection = () => {
+export const TimeTableSection = ({ currentSemester }) => {
   const section = document.createElement("section");
   section.className = "schedule-timetable";
-  section.appendChild(TimeTable({ rowNum: 8, colNum: 8 }));
+  section.appendChild(TimeTable({ rowNum: 8, colNum: 8, currentSemester }));
 
-  // display course blocks
-  // data.schedule[fallSemester].courses.forEach((course) => {
-  //   root.appendChild(
-  //     CourseBlock({
-  //       details: [
-  //         course.code,
-  //         course.title,
-  //         course.title,
-  //         course.title,
-  //         course.title,
-  //       ],
-  //       backColor: "#82caff",
-  //       borderColor: "#0041c2",
-  //     })
-  //   );
-  // });
   return section;
 };

@@ -1,4 +1,7 @@
-export const TimeTable = ({ rowNum, colNum }) => {
+import { data } from "../data.js";
+import { CourseBlock } from "./CourseBlock.js";
+
+export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
   const table = document.createElement("div");
   table.className = "table";
 
@@ -54,6 +57,18 @@ export const TimeTable = ({ rowNum, colNum }) => {
       row.appendChild(col);
     }
   }
+
+  // ==================== rendering course block logic ====================
+  data.schedule[currentSemester].courses.forEach((course) => {
+    // const cell = table.querySelector(`[data-day="${course.day}"][data-time="${course.time}"]`);
+    table.appendChild(
+      CourseBlock({
+        details: [course.code, course.title],
+        backColor: "#82caff",
+        borderColor: "#0041c2",
+      })
+    );
+  });
 
   return table;
 };

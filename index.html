@@ -8,11 +8,17 @@
   </head>
   <body>
     <div id="root">
-      <h1 id="semester-title"></h1>
+      <h3>Class Schedule</h3>
+      <div>
+        Term:
+        <select id="semester-select"></select>
+      </div>
       <div id="button-container">
         <button id="schedule-button" disabled>Schedule</button>
         <button id="detail-button">Schedule Details</button>
+        <button>print</button>
       </div>
+      <div id="semester-title"></div>
       <div id="schedule-container"></div>
     </div>
     <script type="module" src="main.js"></script>
