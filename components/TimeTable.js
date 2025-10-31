@@ -14,22 +14,21 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
     "Friday",
     "Saturday",
   ];
-  const times = ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00"];
-  const smallCell = "70px";
+
+  const times = [];
+  for (let hour = 8; hour <= 22; hour++) {
+    times.push(`${String(hour).padStart(2, "0")}:00`);
+    times.push(`${String(hour).padStart(2, "0")}:30`);
+  }
 
   for (let i = 0; i < rowNum; i++) {
-    const row = document.createElement("div");
-    row.className = `row-${i}`;
-    table.appendChild(row);
-
     for (let j = 0; j < colNum; j++) {
       const col = document.createElement("div");
       col.className = `cell-${i}-${j}`;
 
+      // first cell
       if (i === 0 && j === 0) {
         col.style.backgroundColor = "#cccccc";
-        col.style.width = smallCell;
-        col.className = `cell-${i}-${j}`;
       }
 
       // days
@@ -42,7 +41,6 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
       else if (j === 0 && i > 0) {
         col.textContent = times[i - 1];
         col.style.backgroundColor = "#cccccc";
-        col.style.width = smallCell;
       }
 
       // all cells has data attributes for day and time
@@ -54,7 +52,7 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
         col.textContent = `${day} at ${time}`;
       }
 
-      row.appendChild(col);
+      table.appendChild(col);
     }
   }
 

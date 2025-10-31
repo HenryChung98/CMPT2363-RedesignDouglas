@@ -22,30 +22,26 @@
   border: 1px solid #333333;
 }
 
-#schedule-timetable {
-  border: 1px solid #333333;
-  width: 100px;
-  height: 100px;
-}
-
+#schedule-timetable,
 #schedule-details {
+  display: flex;
+  justify-content: center;
   border: 1px solid #333333;
-  width: 100px;
-  height: 100px;
+  height: 70vh;
+  overflow: auto;
+  width: 1000px;
 }
 
 /* table */
 .table {
-  display: flex;
-  flex-direction: column;
-}
-
-[class^="row-"] {
-  display: flex;
+  display: grid;
+  grid-template-columns: 70px repeat(7, 120px);
+  grid-template-rows: repeat(28, auto);
+  width: fit-content;
+  margin: 0 auto;
 }
 
 [class^="cell-"] {
-  width: 120px;
   border: 1px solid black;
   border-radius: 2px;
   text-align: center;
