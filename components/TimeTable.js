@@ -26,19 +26,29 @@ export const TimeTable = ({ rowNum, colNum }) => {
       if (i === 0 && j === 0) {
         col.style.backgroundColor = "#cccccc";
         col.style.width = smallCell;
+        col.className = `cell-${i}-${j}`;
       }
 
       // days
-      else if (i === 0) {
+      if (i === 0) {
         col.textContent = days[j - 1];
         col.style.backgroundColor = "#cccccc";
       }
 
       // times
-      else if (j === 0 && i >= 0) {
+      else if (j === 0 && i > 0) {
         col.textContent = times[i - 1];
         col.style.backgroundColor = "#cccccc";
         col.style.width = smallCell;
+      }
+
+      // all cells has data attributes for day and time
+      else {
+        const day = days[j - 1];
+        const time = times[i - 1];
+        col.dataset.day = day;
+        col.dataset.time = time;
+        col.textContent = `${day} at ${time}`;
       }
 
       row.appendChild(col);

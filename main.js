@@ -17,7 +17,6 @@ semesterTitle.textContent = fallSemester;
 const timeTableSection = TimeTableSection();
 const detailSection = DetailSection();
 detailSection.style.display = "none"; // initially hide detail section
-
 scheduleContainer.append(timeTableSection, detailSection);
 
 // button handler
