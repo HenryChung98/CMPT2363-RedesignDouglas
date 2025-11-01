@@ -94,6 +94,7 @@ button {
   grid-template-columns: 100px repeat(7, 1fr);
   grid-template-rows: repeat(30, auto);
   margin: 0 auto;
+  position: relative;
 }
 
 [class^="cell-"] {
@@ -111,12 +112,8 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  width: fit-content;
-  height: fit-content;
-  margin: 10px;
-  padding: 10px;
   background-color: white;
   border: 1px solid #333333;
   border-radius: 10px;
+  z-index: 10;
 }

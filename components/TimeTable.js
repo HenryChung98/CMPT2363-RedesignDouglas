@@ -41,6 +41,8 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
       else if (j === 0 && i > 0) {
         col.textContent = times[i - 1];
         col.style.backgroundColor = "#cccccc";
+        col.style.position = "relative";
+        col.style.transform = "translateY(-50%)";
       }
 
       // all cells has data attributes for day and time
@@ -51,21 +53,50 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
         col.dataset.time = time;
       }
 
-      table.appendChild(col);
+      table.append(col);
     }
   }
 
   // ==================== rendering course block logic ====================
-  data.schedule[currentSemester].courses.forEach((course) => {
-    // const cell = table.querySelector(`[data-day="${course.day}"][data-time="${course.time}"]`);
-    table.appendChild(
-      CourseBlock({
-        details: [course.code, course.title],
-        backColor: "#82caff",
-        borderColor: "#0041c2",
-      })
-    );
-  });
+  const positionCourseBlocks = () => {
+    data.schedule[currentSemester].courses.forEach((course) => {
+      // get the start cell of the course
+      const startCell = table.querySelector(
+        `[data-day="${course.day}"][data-time="${course.startTime}"]`
+      );
+
+      // if the course block is not in the table, create a new one, otherwise use the existing one
+      const courseBlock =
+        table.querySelector(`[data-course="${course.code}"]`) ||
+        CourseBlock({
+          details: [course.code, course.title],
+          backColor: course.waitlisted ? "#F1C9C4" : "#82caff",
+          borderColor: course.waitlisted ? "#A43723" : "#0041c2",
+          waitlisted: course.waitlisted,
+        });
+
+      // add the course code to the course block and append it to the table
+      courseBlock.dataset.course = course.code;
+      table.append(courseBlock);
+
+      // get the position of the start cell
+      const rect = startCell.getBoundingClientRect();
+      // get the position of the table
+      const tableRect = table.getBoundingClientRect();
+
+      courseBlock.style.position = "absolute";
+      courseBlock.style.top = rect.top - tableRect.top + table.scrollTop + "px";
+      courseBlock.style.left = rect.left - tableRect.left + table.scrollLeft + "px";
+      courseBlock.style.width = rect.width + "px";
+      courseBlock.style.height = 70 * course.hours + "px";
+    });
+  };
+
+  // render course blocks after the table is rendered
+  setTimeout(positionCourseBlocks, 0);
+
+  // update the position of the course blocks when the window is resized
+  window.addEventListener("resize", positionCourseBlocks);
 
   return table;
 };
