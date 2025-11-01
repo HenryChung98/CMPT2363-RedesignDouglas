@@ -45,16 +45,20 @@ const renderSections = () => {
 // initial render
 renderSections();
 
-// ========================= button handlers =========================
+// ========================= event handlers =========================
 scheduleButton.addEventListener("click", () => {
   scheduleButton.disabled = true;
+  scheduleButton.classList.add("disabled");
   detailButton.disabled = false;
+  detailButton.classList.remove("disabled");
   renderSections();
 });
 
 detailButton.addEventListener("click", () => {
   scheduleButton.disabled = false;
+  scheduleButton.classList.remove("disabled");
   detailButton.disabled = true;
+  detailButton.classList.add("disabled");
   renderSections();
 });
 

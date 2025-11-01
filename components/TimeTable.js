@@ -49,7 +49,6 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
         const time = times[i - 1];
         col.dataset.day = day;
         col.dataset.time = time;
-        col.textContent = `${day} at ${time}`;
       }
 
       table.appendChild(col);

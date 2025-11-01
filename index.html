@@ -8,18 +8,22 @@
   </head>
   <body>
     <div id="root">
-      <h3>Class Schedule</h3>
-      <div>
+      <h3 style="width: 100%">Class Schedule</h3>
+      <div id="select-container">
         Term:
         <select id="semester-select"></select>
       </div>
       <div id="button-container">
-        <button id="schedule-button" disabled>Schedule</button>
-        <button id="detail-button">Schedule Details</button>
-        <button>print</button>
+        <div>
+          <button id="schedule-button" class="disabled" disabled>
+            Schedule
+          </button>
+          <button id="detail-button">Schedule Details</button>
+        </div>
+        <button id="print-button">🖨️</button>
       </div>
       <div id="semester-title"></div>
-      <div id="schedule-container"></div>
+      <main id="schedule-container"></main>
     </div>
     <script type="module" src="main.js"></script>
   </body>
