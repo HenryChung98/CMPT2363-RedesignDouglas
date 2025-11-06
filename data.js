@@ -10,21 +10,23 @@ export const data = {
             capacity: 30,
             current: 25,
             waitlistMax: 100,
-            waitlistCurrent: 0
+            waitlistCurrent: 0,
           },
+          days: ["Tuesday", "Wednesday"],
           dateRange: {
             startDate: "2025-09-01",
             endDate: "2025-12-10",
           },
-          time:{
+          time: {
             startTime: "08:30",
-            endTime: "10:20"
+            endTime: "10:20",
+            hours: 2,
           },
-          location:{
+          location: {
             roomNum: "N661",
             campus: "New Westminister Campus",
-            building: "South East Building Westminister - North Bldg"
-          }
+            building: "South East Building Westminister - North Bldg",
+          },
         },
         {
           crn: 37841,
@@ -35,22 +37,24 @@ export const data = {
             capacity: 30,
             current: 25,
             waitlistMax: 100,
-            waitlistCurrent: 0
+            waitlistCurrent: 0,
           },
+          // days: ["Tuesday", "Wednesday"],
+
           dateRange: {
             startDate: "2025-09-01",
             endDate: "2025-12-10",
           },
-          time:{
+          time: {
             startTime: "08:30",
-            endTime: "10:20"
+            endTime: "10:20",
+            hours: 2,
           },
-          location:{
+          location: {
             roomNum: "N661",
             campus: "New Westminister Campus",
-            building: "South East Building Westminister - North Bldg"
-          }
-          
+            building: "South East Building Westminister - North Bldg",
+          },
         },
       ],
     },
@@ -63,21 +67,22 @@ export const data = {
             capacity: 30,
             current: 25,
             waitlistMax: 100,
-            waitlistCurrent: 0
+            waitlistCurrent: 0,
           },
           dateRange: {
             startDate: "2025-09-01",
             endDate: "2025-12-10",
           },
-          time:{
+          time: {
             startTime: "08:30",
-            endTime: "10:20"
+            endTime: "10:20",
+            hours: 2,
           },
-          location:{
+          location: {
             roomNum: "N661",
             campus: "New Westminister Campus",
-            building: "South East Building Westminister - North Bldg"
-          }
+            building: "South East Building Westminister - North Bldg",
+          },
         },
         {
           code: "CMPT1209",
@@ -86,26 +91,25 @@ export const data = {
             capacity: 30,
             current: 25,
             waitlistMax: 100,
-            waitlistCurrent: 0
+            waitlistCurrent: 0,
           },
           dateRange: {
             startDate: "2025-09-01",
             endDate: "2025-12-10",
           },
-          time:{
+          time: {
             startTime: "08:30",
-            endTime: "10:20"
+            endTime: "10:20",
+            hours: 2,
           },
-          location:{
+          location: {
             roomNum: "N661",
             campus: "New Westminister Campus",
-            building: "South East Building Westminister - North Bldg"
-          }
+            building: "South East Building Westminister - North Bldg",
+          },
         },
       ],
     },
   },
-  totalHours:{
-
-  }
+  totalHours: {},
 };
