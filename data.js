@@ -5,7 +5,14 @@ export const data = {
         {
           crn: 37664,
           code: "CMPT2363",
+          program: "Computing Science",
+          section: "001",
           title: "UI Design",
+          instructor: "Janzen, Izabelle",
+          message: "Registered",
+          credits: 3,
+          level: "Undergraduated",
+          scheduleType: "Lecture",
           courseEnrollment: {
             capacity: 30,
             current: 25,
