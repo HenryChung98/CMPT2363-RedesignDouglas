@@ -1,6 +1,18 @@
+import { DetailBlock } from "../components/DetailBlock.js";
+import { data } from "../data.js";
+
 export const DetailSection = ({ currentSemester }) => {
   const section = document.createElement("section");
   section.id = "schedule-details";
-  section.textContent = `this is ${currentSemester} detail section`;
+
+  data.schedule[currentSemester].courses.forEach((course) => {
+    section.appendChild(
+      DetailBlock({
+        detailsLeft: [course.code, course.title],
+        detailsRight: [course.code, course.title],
+        waitlisted: course.waitlisted,
+      })
+    );
+  });
   return section;
 };

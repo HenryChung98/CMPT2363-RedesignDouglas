@@ -117,3 +117,20 @@ button {
   border-radius: 10px;
   z-index: 10;
 }
+
+/* detail block */
+.detail-block {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #d9d9d9;
+  display: flex;
+}
+
+.detail-block > div * {
+  padding: 10px;
+  font-weight: normal !important;
+}
+
+.detail-block > div:first-child {
+  border-right: 1px solid #939598;
+}
