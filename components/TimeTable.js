@@ -86,6 +86,9 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
   //   });
   // };
   const positionCourseBlocks = () => {
+    // Remove all existing course blocks to prevent duplication
+    table.querySelectorAll("[data-course]").forEach((block) => block.remove());
+
     data.schedule[currentSemester].courses.forEach((course) => {
       course.days.forEach((day) => {
         const startCell = table.querySelector(
