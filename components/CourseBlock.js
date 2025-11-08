@@ -1,9 +1,10 @@
 export const CourseBlock = ({ details, backColor, borderColor, waitlisted = false }) => {
-  const div = document.createElement("div");
-  div.className = "course-block";
+  const a = document.createElement("a");
+  a.className = "course-block";
+  a.href = "#";
+  a.style.backgroundColor = backColor;
+  a.style.border = `2px solid ${borderColor}`;
 
-  div.style.backgroundColor = backColor;
-  div.style.border = `2px solid ${borderColor}`;
 
   details.forEach((detail, index) => {
     const p = document.createElement("p");
@@ -12,8 +13,8 @@ export const CourseBlock = ({ details, backColor, borderColor, waitlisted = fals
     } else {
       p.textContent = detail;
     }
-    div.append(p);
+    a.append(p);
   });
 
-  return div;
+  return a;
 };
