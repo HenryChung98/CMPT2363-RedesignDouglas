@@ -50,44 +50,29 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
   }
 
   // ==================== rendering course block logic ====================
-  // const positionCourseBlocks = () => {
-  //   data.schedule[currentSemester].courses.forEach((course) => {
-  //     course.days.forEach((day) => {
-  //       // get the start cell of the course
-  //       const startCell = table.querySelector(
-  //         `[data-day="${day}"][data-time="${course.time.startTime}"]`
-  //       );
 
-  //       // if the course block is not in the table, create a new one, otherwise use the existing one
-  //       const courseBlock =
-  //         table.querySelector(`[data-course="${course.code}"]`) ||
-  //         CourseBlock({
-  //           details: [course.code, course.title, course.time.startTime],
-  //           backColor: course.waitlisted ? "#F1C9C4" : "#82caff",
-  //           borderColor: course.waitlisted ? "#A43723" : "#0041c2",
-  //           waitlisted: course.waitlisted,
-  //         });
-
-  //       // add the course code to the course block and append it to the table
-  //       courseBlock.dataset.course = course.code;
-  //       table.append(courseBlock);
-
-  //       // get the position of the start cell
-  //       const rect = startCell.getBoundingClientRect();
-  //       // get the position of the table
-  //       const tableRect = table.getBoundingClientRect();
-
-  //       courseBlock.style.position = "absolute";
-  //       courseBlock.style.top = rect.top - tableRect.top + table.scrollTop + "px";
-  //       courseBlock.style.left = rect.left - tableRect.left + table.scrollLeft + "px";
-  //       courseBlock.style.width = rect.width + "px";
-  //       courseBlock.style.height = 70 * course.time.hours + "px";
-  //     });
-  //   });
-  // };
   const positionCourseBlocks = () => {
     // Remove all existing course blocks to prevent duplication
     table.querySelectorAll("[data-course]").forEach((block) => block.remove());
+
+    // find columns that have course blocks
+    const activeDays = new Set();
+    if (data.schedule[currentSemester]?.courses) {
+      data.schedule[currentSemester].courses.forEach((course) => {
+        course.days?.forEach((day) => activeDays.add(day));
+      });
+    }
+
+    // deactivate unused day columns
+    days.forEach((day, index) => {
+      const dayIndex = index + 1;
+      for (let i = 0; i < rowNum; i++) {
+        const cell = table.querySelector(`.cell-${i}-${dayIndex}`);
+        if (cell && !activeDays.has(day)) {
+          cell.style.backgroundColor = "#f0f0f0";
+        }
+      }
+    });
 
     data.schedule[currentSemester].courses.forEach((course) => {
       course.days.forEach((day) => {
@@ -97,10 +82,18 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
 
         // Create a NEW course block for each day
         const courseBlock = CourseBlock({
-          details: [course.code, course.title, course.time.startTime],
-          backColor: course.waitlisted ? "#F1C9C4" : "#82caff",
-          borderColor: course.waitlisted ? "#A43723" : "#0041c2",
-          waitlisted: course.waitlisted,
+          details: {
+            code: course.code,
+            title: course.title,
+            section: course.section,
+            instructor: course.instructor,
+            roomNum: course.location.roomNum,
+            campus: course.location.campusShort,
+            startTime: course.time.startTime,
+            endTime: course.time.endTime,
+          },
+          backColor: course.courseEnrollment.waitlistCurrent ? "#F1C9C4" : "#82caff",
+          waitlisted: course.courseEnrollment.waitlistCurrent,
         });
 
         courseBlock.dataset.course = course.code;
@@ -114,7 +107,7 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
         courseBlock.style.top = rect.top - tableRect.top + table.scrollTop + "px";
         courseBlock.style.left = rect.left - tableRect.left + table.scrollLeft + "px";
         courseBlock.style.width = rect.width + "px";
-        courseBlock.style.height = 70 * course.time.hours + "px";
+        courseBlock.style.height = 80 * course.time.hours + "px";
       });
     });
   };

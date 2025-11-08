@@ -31,6 +31,7 @@ export const data = {
           location: {
             roomNum: "N661",
             campus: "New Westminister Campus",
+            campusShort: "NWN",
             building: "South East Building Westminister - North Bldg",
           },
         },
@@ -43,9 +44,9 @@ export const data = {
             capacity: 30,
             current: 25,
             waitlistMax: 100,
-            waitlistCurrent: 0,
+            waitlistCurrent: 1,
           },
-          // days: ["Tuesday", "Wednesday"],
+          days: ["Monday"],
 
           dateRange: {
             startDate: "2025-09-01",

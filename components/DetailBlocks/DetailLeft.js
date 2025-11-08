@@ -1,14 +1,16 @@
 export const DetailLeft = ({ detailsLeft }) => {
   const div = document.createElement("div");
   div.className = "detail-block-left";
-  div.style.paddingLeft = "10px";
-  div.style.display = "flex";
-  div.style.flexDirection = "column";
-  div.style.gap = "4px";
-  div.style.fontSize = "14px";
-  div.style.borderRight = "2px solid #939598";
-  div.style.paddingRight = "20px";
-  div.style.marginBottom = "20px";
+  div.style.cssText = `
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    border-right: 2px solid #939598;
+    padding-right: 20px;
+    margin-bottom: 20px;
+  `;
 
   div.innerHTML = `
       <div style="display: flex;">

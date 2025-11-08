@@ -1,12 +1,14 @@
 export const DetailRight = ({ detailsRight }) => {
   const div = document.createElement("div");
   div.className = "detail-block-right";
-  div.style.display = "flex";
-  div.style.flexDirection = "column";
-  div.style.gap = "4px";
-  div.style.fontSize = "14px";
-  div.style.paddingLeft = "20px";
-  div.style.marginBottom = "20px";
+  div.style.cssText = `
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  `;
 
   div.innerHTML = `
       <p>Message: <span style="font-weight: normal; color: ${

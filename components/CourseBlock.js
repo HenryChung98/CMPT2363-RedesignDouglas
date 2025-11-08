@@ -1,20 +1,19 @@
-export const CourseBlock = ({ details, backColor, borderColor, waitlisted = false }) => {
-  const a = document.createElement("a");
-  a.className = "course-block";
-  a.href = "#";
-  a.style.backgroundColor = backColor;
-  a.style.border = `2px solid ${borderColor}`;
+export const CourseBlock = ({ details, backColor, waitlisted = false }) => {
+  const div = document.createElement("div");
+  div.className = "course-block";
+  div.href = "#";
+  div.style.backgroundColor = backColor;
+  div.style.cursor = "pointer";
 
+  div.innerHTML = `
+    <p><span style="color: #A43723;">${waitlisted ? "⚠ " : ""}</span>${details.startTime} - ${
+    details.endTime
+  }</p>
+    <p style="font-weight: normal;">${details.code}-${details.section}</p>
+    <p style="font-weight: normal;">${details.title}</p>
+    <p style="font-weight: normal;">${details.campus} - ${details.roomNum}</p>
+    <p style="font-weight: normal;">${details.instructor}</p>
+  `;
 
-  details.forEach((detail, index) => {
-    const p = document.createElement("p");
-    if (waitlisted && index === 0) {
-      p.textContent = "⚠ " + detail;
-    } else {
-      p.textContent = detail;
-    }
-    a.append(p);
-  });
-
-  return a;
+  return div;
 };
