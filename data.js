@@ -37,7 +37,7 @@ export const data = {
           },
           modal: {
             bookstoreLink: "#",
-            description: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, rem eligendi corporis blanditiis tempore tenetur fuga quod quo consequatur id, rerum alias vel dicta sequi voluptas necessitatibus incidunt voluptatum optio!",
           },
         },
         {

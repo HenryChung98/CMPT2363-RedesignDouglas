@@ -36,7 +36,7 @@ export const Modal = ({ course, blockColor }) => {
   <div>
     <div style="font-size: 14px; background: ${blockColor}; border-radius: 3px; padding: 10px;">Class Detail for ${title}</div>
         <div style="display: flex; background: white;">
-            <nav style="width: 200px;">
+            <nav style="width: 200px; width: 30%;">
                 <div data-tab="first" class="nav-item" style="cursor: pointer; padding: 5px; background: white; border-radius: 1px;">Section Notes & Pre-reqs</div>
                 <div data-tab="second" class="nav-item" style="cursor: pointer; padding: 5px; background: #EDEDED; border-radius: 1px;">class Details</div>
                 <div data-tab="third" class="nav-item" style="cursor: pointer; padding: 5px; background: #EDEDED; border-radius: 1px;">Course Description</div>
@@ -46,7 +46,7 @@ export const Modal = ({ course, blockColor }) => {
                 <div data-tab="seventh" class="nav-item" style="cursor: pointer; padding: 5px; background: #EDEDED; border-radius: 1px;">Linked Sections</div>
                 <div data-tab="eighth" class="nav-item" style="cursor: pointer; padding: 5px; background: #EDEDED; border-radius: 1px;">Bookstore Link</div>
             </nav>
-            <div style="padding: 10px; padding-left: 20px;">
+            <div style="padding: 10px; padding-left: 20px; width: 70%;">
 
                 <div id="first">
                     <h4>Pre-reqs & Course Info:</h4>

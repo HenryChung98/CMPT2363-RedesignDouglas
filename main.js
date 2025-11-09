@@ -1,5 +1,5 @@
 import { data } from "./data.js";
-import { TimeTableSection } from "./sections/TimetableSection.js";
+import { TimeTableSection } from "./sections/TimeTableSection.js";
 import { DetailSection } from "./sections/DetailSection.js";
 
 const semesterTitle = document.getElementById("semester-title");
