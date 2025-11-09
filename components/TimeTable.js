@@ -82,16 +82,7 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
 
         // Create a NEW course block for each day
         const courseBlock = CourseBlock({
-          details: {
-            code: course.code,
-            title: course.title,
-            section: course.section,
-            instructor: course.instructor,
-            roomNum: course.location.roomNum,
-            campus: course.location.campusShort,
-            startTime: course.time.startTime,
-            endTime: course.time.endTime,
-          },
+           course,
           backColor: course.courseEnrollment.waitlistCurrent ? "#F1C9C4" : "#82caff",
           waitlisted: course.courseEnrollment.waitlistCurrent,
         });

@@ -34,6 +34,10 @@ export const data = {
             campusShort: "NWN",
             building: "South East Building Westminister - North Bldg",
           },
+          modal: {
+            bookstoreLink: "#",
+            description: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          },
         },
         {
           crn: 37841,
@@ -61,6 +65,10 @@ export const data = {
             roomNum: "N661",
             campus: "New Westminister Campus",
             building: "South East Building Westminister - North Bldg",
+          },
+          modal: {
+            bookstoreLink: "#",
+            description: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           },
         },
       ],

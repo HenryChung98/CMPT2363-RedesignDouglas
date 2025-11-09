@@ -1,4 +1,8 @@
-export const DetailLeft = ({ detailsLeft }) => {
+export const DetailLeft = ({ course }) => {
+  const { time, location, instructor, crn } = course;
+  const { startTime, endTime } = time;
+  const { campus, building, roomNum } = location;
+
   const div = document.createElement("div");
   div.className = "detail-block-left";
   div.style.cssText = `
@@ -14,15 +18,15 @@ export const DetailLeft = ({ detailsLeft }) => {
 
   div.innerHTML = `
       <div style="display: flex;">
-        <p>${detailsLeft.startTime}</p>
+        <p>${startTime}</p>
         <p>&nbsp;&nbsp;-&nbsp;&nbsp;</p>
-        <p>${detailsLeft.endTime}</p>
+        <p>${endTime}</p>
       </div>  
-      <p>Location: <span style="font-weight: normal">${detailsLeft.campus}</span></p>
-      <p>Building: <span style="font-weight: normal">${detailsLeft.building}</span></p>
-      <p>Room: <span style="font-weight: normal">${detailsLeft.roomNum}</span></p>
-      <p>Instructor: <a href="mailto:test@test" style="color: #2B7DA1; font-weight: normal">${detailsLeft.instructor}</a><span style="font-weight: normal">&nbsp;&nbsp;(Primary)</span></p>
-      <p>CRN: <span style="font-weight: normal">${detailsLeft.crn}</span></p>
+      <p>Location: <span style="font-weight: normal">${campus}</span></p>
+      <p>Building: <span style="font-weight: normal">${building}</span></p>
+      <p>Room: <span style="font-weight: normal">${roomNum}</span></p>
+      <p>Instructor: <a href="mailto:test@test" style="color: #2B7DA1; font-weight: normal">${instructor}</a><span style="font-weight: normal">&nbsp;&nbsp;(Primary)</span></p>
+      <p>CRN: <span style="font-weight: normal">${crn}</span></p>
   `;
   return div;
 };
