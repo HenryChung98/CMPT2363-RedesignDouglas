@@ -3,6 +3,7 @@ export const data = {
     Fall2025: {
       courses: [
         {
+          blockColor: "#82caff",
           crn: 37664,
           code: "CMPT2363",
           section: "001",

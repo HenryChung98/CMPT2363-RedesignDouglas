@@ -1,6 +1,6 @@
 import { Modal } from "./Modal.js";
 
-export const CourseBlock = ({ course, backColor, waitlisted = false }) => {
+export const CourseBlock = ({ course, blockColor, waitlisted = false }) => {
   const { code, title, section, instructor, location, time, scheduleType, modal } = course;
   const { roomNum, campus, campusShort } = location;
   const { startTime, endTime } = time;
@@ -8,7 +8,7 @@ export const CourseBlock = ({ course, backColor, waitlisted = false }) => {
   const div = document.createElement("div");
   div.className = "course-block";
   div.href = "#";
-  div.style.backgroundColor = backColor;
+  div.style.backgroundColor = blockColor;
   div.style.cursor = "pointer";
 
   div.innerHTML = `
@@ -39,7 +39,7 @@ export const CourseBlock = ({ course, backColor, waitlisted = false }) => {
     `;
     document.body.append(overlay);
 
-    const modal = Modal({ course });
+    const modal = Modal({ course, blockColor });
 
     const closeBtn = document.createElement("button");
     closeBtn.textContent = "Close";

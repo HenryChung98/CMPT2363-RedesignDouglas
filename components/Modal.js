@@ -1,6 +1,6 @@
 import { DaysBlock } from "./DetailBlocks/DaysBlock.js";
 
-export const Modal = ({ course }) => {
+export const Modal = ({ course, blockColor }) => {
   const {
     title,
     crn,
@@ -34,7 +34,7 @@ export const Modal = ({ course }) => {
     `;
   div.innerHTML = `
   <div>
-    <div style="font-size: 14px; background: #939598; color: white; border-radius: 3px; padding: 10px;">Class Detail for ${title}</div>
+    <div style="font-size: 14px; background: ${blockColor}; border-radius: 3px; padding: 10px;">Class Detail for ${title}</div>
         <div style="display: flex; background: white;">
             <nav style="width: 200px;">
                 <div data-tab="first" class="nav-item" style="cursor: pointer; padding: 5px; background: white; border-radius: 1px;">Section Notes & Pre-reqs</div>
