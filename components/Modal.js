@@ -15,10 +15,12 @@ export const Modal = ({ course, blockColor }) => {
     days,
     dateRange,
     time,
+    description,
+    links,
   } = course;
   const { capacity, current, waitlistMax, waitlistCurrent } = courseEnrollment;
   const { campus, roomNum, building } = location;
-  const { bookstoreLink, description } = modal;
+  const { courseInfo } = links;
 
   const div = document.createElement("div");
   div.style.cssText = `
@@ -50,7 +52,7 @@ export const Modal = ({ course, blockColor }) => {
 
                 <div id="first">
                     <h4>Pre-reqs & Course Info:</h4>
-                    <a href="${bookstoreLink}" target="_blank" style="font-weight: normal;">${bookstoreLink}</a>
+                    <a href="${courseInfo}" target="_blank" style="font-weight: normal;">${courseInfo}</a>
 
                 </div>
                 

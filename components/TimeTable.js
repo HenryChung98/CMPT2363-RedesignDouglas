@@ -32,7 +32,7 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
       // times
       else if (j === 0 && i > 0) {
         col.textContent = times[i - 1];
-        col.style.backgroundColor = "#cccccc";
+        col.style.backgroundColor = "#dddddd";
         col.style.position = "relative";
         col.style.transform = "translateY(-50%)";
       }
@@ -83,7 +83,7 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
         // Create a NEW course block for each day
         const courseBlock = CourseBlock({
            course,
-          blockColor: course.courseEnrollment.waitlistCurrent ? "#F1C9C4" : course.blockColor ? course.blockColor : "#C9F0D9",
+          blockColor: course.courseEnrollment.waitlistCurrent ? "#FF867C" : course.blockColor ? course.blockColor : "#90CAF9",
           waitlisted: course.courseEnrollment.waitlistCurrent,
         });
 

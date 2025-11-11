@@ -3,7 +3,7 @@ export const data = {
     Fall2025: {
       courses: [
         {
-          blockColor: "#82caff",
+          blockColor: "#81D4FA",
           crn: 37664,
           code: "CMPT2363",
           section: "001",
@@ -27,7 +27,7 @@ export const data = {
           time: {
             startTime: "08:30",
             endTime: "10:20",
-            hours: 2,
+            hours: 1.83,
           },
           location: {
             roomNum: "N661",
@@ -35,10 +35,12 @@ export const data = {
             campusShort: "NWN",
             building: "South East Building Westminister - North Bldg",
           },
-          modal: {
-            bookstoreLink: "#",
-            description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, rem eligendi corporis blanditiis tempore tenetur fuga quod quo consequatur id, rerum alias vel dicta sequi voluptas necessitatibus incidunt voluptatum optio!",
+          links: {
+            blackboard: "#",
+            courseInfo: "#",
           },
+          description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, rem eligendi corporis blanditiis tempore tenetur fuga quod quo consequatur id, rerum alias vel dicta sequi voluptas necessitatibus incidunt voluptatum optio!",
         },
         {
           crn: 37841,
@@ -60,17 +62,18 @@ export const data = {
           time: {
             startTime: "08:30",
             endTime: "10:20",
-            hours: 2,
+            hours: 1.83,
           },
           location: {
             roomNum: "N661",
             campus: "New Westminister Campus",
             building: "South East Building Westminister - North Bldg",
           },
-          modal: {
-            bookstoreLink: "#",
-            description: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          links: {
+            blackboard: "#",
+            courseInfo: "#",
           },
+          description: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         },
       ],
     },
