@@ -197,7 +197,9 @@ header{
 /* =============================== */
 
 /*=======Responsive=Design=========*/
+
 @media(max-width: 769px) {
+  /*=====Banner======*/
   .college-header{
     flex-direction: column;
     align-items: center;
@@ -210,6 +212,16 @@ header{
     justify-content: center;
     gap: 1rem;
   }
+  /* ================== */
+  /*====Course-Block====*/
+  .course-block{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 60vh;
+    scrollbar-width: thin;
+
+  }
+  /* ================== */
 }
 
 /* =============================== */
