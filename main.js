@@ -62,9 +62,14 @@ detailButton.addEventListener("click", () => {
   renderSections();
 });
 
+document.getElementById("print-button").addEventListener("click", () =>{
+  window.print();
+})
+
 // semester select change handler
 semesterSelect.addEventListener("change", (e) => {
   currentSemester = e.target.value;
   semesterTitle.textContent = `Class Schedule for ${currentSemester}`;
   renderSections();
 });
+
