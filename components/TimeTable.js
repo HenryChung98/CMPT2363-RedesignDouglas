@@ -7,6 +7,26 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
 
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
+  /*===cut=off=calculator=======*/
+  let latestEnd = "08:00"; //start time
+
+  if(data.schedule[currentSemester]?.courses){
+    data.schedule[currentSemester].courses.forEach((course)=>{
+      const end = course.time.endTime;
+      if(end > latestEnd){
+        latestEnd = end;
+      }
+    });
+  }
+  //increment hours funtion
+  function addHours(time, h){
+    const [hour, min] = time.split(":").map(Number);
+    return `${String(hour + h).padStart(2, "0")}:${min}`;
+  }
+  //increment by 2 hours
+  const cutOffTime = addHours(latestEnd, 2);
+
+  /*============================*/
   const times = [];
   for (let hour = 8; hour <= 22; hour++) {
     times.push(`${String(hour).padStart(2, "0")}:00`);
@@ -14,6 +34,13 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
   }
 
   for (let i = 0; i < rowNum; i++) {
+    
+    if(i > 0){ // stop drawing early for cutoff time
+      const timeForRow = times[i-1];
+      if(timeForRow > cutOffTime){
+        break;
+      }
+    }
     for (let j = 0; j < colNum; j++) {
       const col = document.createElement("div");
       col.className = `cell-${i}-${j}`;
