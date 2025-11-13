@@ -19,7 +19,7 @@ export const CourseBlock = ({ course, blockColor, waitlisted = false, glow = fal
     //run animation for 2 seconds
     setTimeout(()=>{
       div.classList.remove("waitlist-animating");
-    }, 1500);
+    }, 2300);
     
   }
   div.style.cursor = "pointer";
