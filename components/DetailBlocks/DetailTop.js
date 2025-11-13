@@ -13,7 +13,7 @@ export const DetailTop = ({ course }) => {
 
   div.innerHTML = `
     <div style="display: flex; font-size: 15px; gap: 8px; padding-bottom: 20px;">
-      <a href="${courseInfo}" style="color: #2B7DA1; target="_blank"">${title}</a>
+      <a href="${courseInfo}" style="color: #2B7DA1;" target="_blank">${title}</a>
       <p style="border-left: 2px solid black; padding-left: 8px;">${code}</p>
       <p>Section ${section}</p>
       <a href="${blackboard}" target="_blank" style="border-left: 2px solid black; padding-left: 8px; color: #2B7DA1;">Blackboard</a>
