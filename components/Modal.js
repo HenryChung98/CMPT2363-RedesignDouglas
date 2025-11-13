@@ -111,7 +111,7 @@ export const Modal = ({ course, blockColor }) => {
                     }</span></p>
                     <hr style="margin: 10px 0;" />
                     <p>Waitlist Capacity: <span style="font-weight: normal">${waitlistMax}</span></p>
-                    <p>Waitlist Actual: <span style="font-weight: normal">${waitlistCurrent}</span></p>
+                    <p>Waitlist Current Position: <span style="font-weight: normal">${waitlistCurrent}</span></p>
                     <p>Waitlist Seats Available: <span style="font-weight: normal">${
                       waitlistMax - waitlistCurrent
                     }</span></p>
