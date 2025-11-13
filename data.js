@@ -174,7 +174,7 @@ export const data = {
           section: "003",
           title: "Intro to Software Engineering",
           instructor: "Janzen, Izabelle",
-          message: "Registered",
+          message: "Waitlisted",
           credits: 3,
           level: "Undergraduate",
           scheduleType: "Lecture",
