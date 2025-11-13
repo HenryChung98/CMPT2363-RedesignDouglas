@@ -223,10 +223,28 @@ header{
   }
   /* ================== */
 }
-@media print{
+@media print{ 
   #print-button{
     display: none;
   }
+}
+/*glow pulse animation*/
+@keyframes waitlistPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 80, 80, 0.7);
+    border-color: rgba(255, 40, 40, 1);
+  }
+  50% {
+    box-shadow: 0 0 12px 6px rgba(255, 80, 80, 0.4);
+    border-color: rgba(255, 0, 0, 1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 80, 80, 0.7);
+    border-color: rgba(255, 40, 40, 1);
+  }
+}
+.waitlist-animating{
+  animation: waitlistPulse 0.8s ease-in-out infinite;
 }
 
 /* =============================== */

@@ -83,8 +83,16 @@ export const TimeTable = ({ rowNum, colNum, currentSemester }) => {
         // Create a NEW course block for each day
         const courseBlock = CourseBlock({
            course,
-          blockColor: course.courseEnrollment.waitlistCurrent ? "#FF867C" : course.blockColor ? course.blockColor : "#90CAF9",
+          //waitlist color
+          blockColor: course.courseEnrollment.waitlistCurrent 
+            ? "#FF867C" : course.blockColor ? course.blockColor 
+            : "#90CAF9",
+          
           waitlisted: course.courseEnrollment.waitlistCurrent,
+            //border glow
+          glow: course.courseEnrollment.waitlistCurrent
+            ? true
+            : false,
         });
 
         courseBlock.dataset.course = course.code;

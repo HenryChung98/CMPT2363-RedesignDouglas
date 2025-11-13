@@ -1,6 +1,6 @@
 import { Modal } from "./Modal.js";
 
-export const CourseBlock = ({ course, blockColor, waitlisted = false }) => {
+export const CourseBlock = ({ course, blockColor, waitlisted = false, glow = false }) => {
   const { code, title, section, instructor, location, time, scheduleType, modal } = course;
   const { roomNum, campus, campusShort } = location;
   const { startTime, endTime } = time;
@@ -9,6 +9,19 @@ export const CourseBlock = ({ course, blockColor, waitlisted = false }) => {
   div.className = "course-block";
   div.href = "#";
   div.style.backgroundColor = blockColor;
+
+  //glow style
+  if(glow){
+    //set border to red for after pulse highlighting
+    div.style.border = "4px solid #FF4c4c";
+    //add style
+    div.classList.add("waitlist-animating");
+    //run animation for 2 seconds
+    setTimeout(()=>{
+      div.classList.remove("waitlist-animating");
+    }, 1500);
+    
+  }
   div.style.cursor = "pointer";
 
   div.innerHTML = `
